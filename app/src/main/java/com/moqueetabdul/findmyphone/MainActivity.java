@@ -5,6 +5,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
@@ -38,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
             sharedPreferences.edit().putBoolean("first_run",false).apply();
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("Your secret code")
-                    .setMessage("Your 4 digit secret code is: "+code)
+                    .setMessage("Your 4 digit secret code is: "+code+"\nYou can find it later under settings")
                     .setPositiveButton("Ok", null)
                     .setCancelable(false).create().show();
         }
@@ -54,6 +55,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        Intent i = new Intent(getApplicationContext(),SettingActivity.class);
+        startActivity(i);
 
         return true;
     }
