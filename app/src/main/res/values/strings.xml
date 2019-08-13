@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Find My Phone</string>
+    <string name="description_text"><![CDATA[Just send a msg from other phone to this phone.\nThe msg format should be:\nfind my phone <your code>\n\nEg:\nfind my phone 1234]]></string>
+    <string name="how_to_use">How to use!</string>
+    <string name="setting">Setting</string>
+</resources>
