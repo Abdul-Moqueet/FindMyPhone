@@ -43,5 +43,4 @@ public class IncomingSms extends BroadcastReceiver {
             Log.e("SmsReceiver", "Exception smsReceiver" +e);
         }
     }
-
 }
