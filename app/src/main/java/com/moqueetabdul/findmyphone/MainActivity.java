@@ -34,12 +34,12 @@ public class MainActivity extends AppCompatActivity {
 
         if(sharedPreferences.getBoolean("first_run",true)){
 
-            String code = String.format(Locale.US,"%04d", new Random().nextInt(10000));
-            sharedPreferences.edit().putString("code",code).apply();
+            String pin = String.format(Locale.US,"%04d", new Random().nextInt(10000));
+            sharedPreferences.edit().putString("pin",pin).apply();
             sharedPreferences.edit().putBoolean("first_run",false).apply();
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("Your secret code")
-                    .setMessage("Your 4 digit secret code is: "+code+"\nYou can find it later under settings")
+                    .setMessage("Your 4 digit secret pin is: "+pin+"\nYou can find it later under settings")
                     .setPositiveButton("Ok", null)
                     .setCancelable(false).create().show();
         }
